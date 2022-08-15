@@ -2,8 +2,6 @@
 
 ## Meet Our Cruisers:  
 
-Liesl White  
-
 Dennis Devries  
 
 Dominic Giacona  
