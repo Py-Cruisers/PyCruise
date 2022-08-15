@@ -1,0 +1,64 @@
+### Prepare Your Projects
+For this project, you will be summarizing all of the concepts you’ve learned and applied in labs up to this point of the course. Your instructional team will provide you with further specification regarding constraints and expectations for course-specific requirements.
+
+At this point, you should have an idea as to what’s possible to create given what your course has covered so far and will cover before the start of the project. Use that knowledge to generate some ideas and discussion!
+
+### Project Requirements
+Your instructor will provide the detailed requirements for your project, and team tasks.
+#### Group Project: Pitch Ideas
+It is now time to begin preparations for your Group Project. You’ve been given groups, so the first step for group projects is to pitch ideas.
+Tasks
+
+As a group, arrange a 30-60 minute time when you can all be in the same place. Lab time is ideal for this.
+There will be two phases for this: brainstorm ideas, and pitching projects.
+
+### Brainstorming Ideas
+Grab a whiteboard and brainstorm ideas. During this phase, there is no comment or criticism of ideas. Ideas should be given in the form of titles or very short phrases. If an explanation is needed, save it for the pitch round.
+
+- Custom Desktop Application
+    - Docs: Medium (Build your first Desktop App)
+        - [Medium (Desktop App)](https://medium.com/analytics-vidhya/how-to-build-your-first-desktop-application-in-python-7568c7d74311)
+    - Create our own custom Desktop Application
+        - Build basic UI and functionality to get a custom desktop application off the ground!
+    - Potential Features
+        - Military memorandum automation (combine into various file features)
+    - File Sorting
+        - Sort screenshots from desktop into organized files
+        - Overhaul filesystem org???
+    - Automatically open Zoom when class starts in the morning :)
+    - Open dev workflow
+        - Chrome
+        - Gmail
+        - Canvas
+        - Remo
+        - Ubuntu CLI
+        - PyCharm/VS Code
+- Backup MVP: Any of the above as the sole objective (scaled according to complexity)
+<hr>
+
+### Pitching a Project
+Once a critical mass of ideas has been written down, the person who offered the idea will give a pitch. Each pitch may be no longer than 2 to 3 minutes. The purpose of a pitch is to sell the idea to your group mates. During this phase, questions may be asked, but the discussion should be limited. Keep it short and to the point. 
+
+At the end of the pitch, you should have formed a short list of favorites.
+
+### Create your Pitch
+Once your team had decided on 1 or 2 favorites, prepare your pitches for submission.
+Each pitch should contain the following information:
+- Name of Project
+    - PyCruise: The desktop app that automates menial desktop tasks and operations .
+- What problem or pain point does it solve? 
+    - Tedious tasks like formatting memorandums and clicking through the desktop to get your dev workflow environment set up are such a drag! 
+    - Save time and automate the processes that waste your precious focus and energy by optimizing your desktop workflow with python automation!
+- Minimum Viable Product (MVP) definition.
+- What is the minimum required for you to present on your demo day?
+    - A custom desktop application that opens with (or potentially even without) user input and successfully carries out operations like opening desktop application with a single click or typed command, automatically organizing downloaded files, and producing pre-formatted memorandum templates.
+
+<hr>
+
+### Submitting Your Work
+This is a group submission. Only one person must submit for group credit.
+
+Please have everyone’s name at the top of the doc.
+Submit a link to your GitHub markdown file where you have created your Team Agreement.
+
+This step must be completed and approved before proceeding with any project work. Notify your instructor when this is ready for review.
