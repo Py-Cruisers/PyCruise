@@ -2,8 +2,6 @@
 
 ## Meet Our Cruisers:  
 
-Liesl White  
-
 Dennis Devries  
 
 Dominic Giacona  
@@ -21,4 +19,12 @@ Liesl White
 1. [Team Agreement](project-preps/prep-1)
 2. [Prepare Your Projects](project-preps/prep-2)
 3. [Repo & Tooling](project-preps/prep-3)
-4. [Wireframes & Software Requirements](project-preps/prep-4)
+4. [User Stories & Software Requirements](project-preps/prep-4)
+
+## Flow
+
+![PyCruise Flowchart](flowchart.png)
+
+## Domain Modeling  
+
+![PyCruise Domain Model](domain_model.jpg)
