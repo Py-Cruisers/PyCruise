@@ -2,7 +2,7 @@
 
 ## Meet Our Cruisers:  
 
-Dennis Devries  
+Dennis DeVries  
 
 Dominic Giacona  
 
