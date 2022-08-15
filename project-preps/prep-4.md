@@ -1,6 +1,4 @@
-# Wireframes & Software Requirements  
-
-## User Stories:  
+# User Stories:  
 
 > *"As a data analyst, I want to open Microsoft Excel and my email, so that I will be ready at any time at work to share and show necessary information to my co-workers."*  
 
@@ -14,8 +12,4 @@
 
 > *"As an office manager, I want to switch from one task environment to the next, so that I may continue my workflow while transitioning from one task to another."*  
 
-## Software Requirements  
 
-Check out the link to our **Software Requirements** below:  
-
-[Software Requirements: PyCruisers]()
