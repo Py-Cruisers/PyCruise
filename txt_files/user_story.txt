@@ -1,0 +1,54 @@
+Welcome!
+
+    print("\n\033[1;34m[+] 1. Tutorial")
+       print("\033[1;34m[+] 2. Create new collection")
+       print("\033[1;34m[+] 3. View existing collections")
+       print("\033[1;34m[+] 4. Switch collections")
+       print("\033[1;34m[+] 5. Quit\n")
+
+> 2
+
+:( Sorry, you don't have any collections yet. Would you like to make one?
+
+    print("\033[1;34m[+] 1. Create new custom list")
+    print("\033[1;34m[+] 3. Quit\n")
+
+
+
+> 4
+
+mode 1
+mode 2
+mode 3 <
+mode 4
+
+You are currently on list "mode 3"
+
+    print("\n\033[1;34m[+] 1. Run existing list of apps")
+    print("\033[1;34m[+] 2. Add to current list of apps/websites")
+    print("\033[1;34m[+] 3. Delete from current list of apps/websites")
+    print("\033[1;34m[+] 4. View current lists of apps and websites")
+    print("\033[1;34m[+] 5. Main Menu")
+    print("\033[1;34m[+] 6. Quit\n")
+
+
+
+(Creating custom list)
+
+> 1
+
+What would you liked to title your new list?
+
+> School-work
+
+Great! School-work has been created.
+
+You are currently on list "School-work"
+
+    print("\n\033[1;34m[+] 1. Run existing list of apps")
+    print("\033[1;34m[+] 2. Add to current list of apps/websites")
+    print("\033[1;34m[+] 3. Delete from current list of apps/websites")
+    print("\033[1;34m[+] 4. View current lists of apps and websites")
+    print("\033[1;34m[+] 5. Main Menu")
+    print("\033[1;34m[+] 6. Quit\n")
+
