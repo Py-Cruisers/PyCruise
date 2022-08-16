@@ -30,8 +30,8 @@ def choice_one(choice):
                     webbrowser.open(app)
                 else:
                     app_to_use = app.strip('\n').lower()
-                    os.system(f"/snap/bin/{app_to_use}")
-
+                    os.system(f"""osascript -e 'tell application "{app_to_use}" to activate'""")
+         
 def choice_two(choice):
     if choice == "2":
 

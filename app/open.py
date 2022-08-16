@@ -14,4 +14,6 @@ Works, but does not open all applications in a window. Only opens in background.
 """
 
 os.system("""osascript -e 'tell application "Mission Control" to activate'""")
+
+
 """ Opens any and all MacOS applications in the application folder. Will not bring already open applications to the foreground. """

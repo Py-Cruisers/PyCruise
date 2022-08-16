@@ -1,3 +1,4 @@
+import platform
 import webbrowser
 import os 
 
@@ -6,10 +7,24 @@ import os
 # https://github.com/BullsEye0/ghost_eye/blob/master/ghost_eye.py
 
 def banner():
-
-    print(""" Welcome to PyCruise! This is a program that will open your favorite apps and websites.                                                         
-    """)
-
+    print(""" \033[1;34m                 
+8888888b.            .d8888b.                   d8b                   
+888   Y88b          d88P  Y88b                  Y8P                   
+888    888          888    888                                        
+888   d88P 888  888 888        888d888 888  888 888 .d8888b   .d88b.  
+8888888P"  888  888 888        888P"   888  888 888 88K      d8P  Y8b 
+888        888  888 888    888 888     888  888 888 "Y8888b. 88888888 
+888        Y88b 888 Y88b  d88P 888     Y88b 888 888      X88 Y8b.     
+888         "Y88888  "Y8888P"  888      "Y88888 888  88888P'  "Y8888  
+                888                                                   
+           Y8b d88P                                                   
+            "Y88P"                                                       
+            \033[1;m                                                                                          
+        \033[34m PyCruse - Convenience Tool \033[0m
+        \033[34m Author: Liesl W., Dennis D., Marco F., Dominic G., Brentice L. \033[0m
+        \033[34m Github:  https://github.com/Py-Cruisers/PyCruise \033[0m
+        \033[34m Code Fellow 401 Project \033[0m
+              Welcome to PyCruse!""")
 
 def main_menu():
     print("\n\033[1;34m[+] 1. Run existing list of apps")
@@ -17,6 +32,9 @@ def main_menu():
     print("\033[1;34m[+] 3. Delete from current list of apps/websites")
     print("\033[1;34m[+] 4. View current list of apps/websites")
     print("\033[1;34m[+] 5. Quit\n")
+
+    def nice_view():
+      banner()
 
 def choice_one(choice):
     """This is for Linux. For Mac/Windows users replace system path with path to application execution files"""
@@ -27,11 +45,26 @@ def choice_one(choice):
             
             for app in text_from_file:
                 if "http" in app or "www" in app:
-                    webbrowser.open(app)
+                    webbrowser.open(app.strip())
                 else:
                     app_to_use = app.strip('\n').lower()
-                    os.system(f"/snap/bin/{app_to_use}")
 
+                    if platform.system() == 'Linux':
+                        # print("Linux detected.")
+                        os.system(f"/snap/bin/{app_to_use}")
+
+                    if platform.system() == 'Linux' and "WSL" in platform.release():
+                    # print("WSL detected. Will require Windows fn()'s")
+                        pass
+
+                    if platform.system() == 'Windows':
+                        # print("Windows detected.")
+                        pass
+
+                    if platform.system() == 'Darwin':
+                        # print("Now opening MacOS Application!")
+                        os.system(f"""osascript -e 'tell application "{app_to_use}" to activate'""")
+         
 def choice_two(choice):
     if choice == "2":
 
@@ -63,8 +96,6 @@ def choice_four(choice):
             text_from_file = f.readlines()
             for file in text_from_file:
                 print(file)
-
-
 
 def run():
     choice = "4"
