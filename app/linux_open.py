@@ -55,6 +55,14 @@ def choice_three(choice):
                             if line.strip('\n') != f"{delete_choice}":
                                 fw.write(line)
 
+def choice_four(choice):
+    if choice == "4":
+        with open("add_app.txt", "r") as f:
+            text_from_file = f.readlines()
+            for file in text_from_file:
+                print(file)
+
+
 
 def run():
     choice = "4"
@@ -66,6 +74,6 @@ def run():
         choice_one(choice)
         choice_two(choice)
         choice_three(choice)
-
+        choice_four(choice)
 
 run()
