@@ -18,21 +18,17 @@ def main_menu():
     print("\033[1;34m[+] 5. Quit\n")
 
 def choice_one(choice):
-    """This is for Linux. For Mac users replace system path with path to application execution files"""
+    """This is for Linux. For Mac/Windows users replace system path with path to application execution files"""
     if choice == "1":
 
         with open("add_app.txt", "r") as f:
-            text_from_file = f.read()
+            text_from_file = f.readlines()
+            
             for app in text_from_file:
-                os.system(f"/snap/bin/{app}")
-            print(text_from_file)
-                
-
-            # os.system("/snap/bin/code")
-            # os.system("/snap/bin/slack")
-
-            # webbrowser.open('https://canvas.instructure.com/courses/4916427')
-            # webbrowser.open('https://zoom.us/j/99194599654?pwd=dUowRi9DSHpNbFBNaWtRQ3NYMDd4Zz09#success')
+                if "http" in app or "www" in app:
+                    webbrowser.open(app)
+                else:
+                    os.system(f"/snap/bin/{app}")
 
 def choice_two(choice):
     if choice == "2":
@@ -45,6 +41,10 @@ def choice_two(choice):
                 with open("add_app.txt", "a") as f:
                     f.write(f"{app_choice}\n")
 
+def choice_three(choice):
+    pass
+
+
 def run():
     choice = "4"
     banner()
@@ -54,8 +54,6 @@ def run():
         choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
         choice_one(choice)
         choice_two(choice)
-
-        
 
 
 run()
