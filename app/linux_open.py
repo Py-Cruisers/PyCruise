@@ -42,7 +42,18 @@ def choice_two(choice):
                     f.write(f"{app_choice}\n")
 
 def choice_three(choice):
-    pass
+    if choice == "3":
+        while True:
+            delete_choice = input("Enter an app or website to delete or (f) as finished: ")
+            if delete_choice.lower() == "f":
+                break
+            else:
+                with open("add_app.txt", "r") as fr:
+                    lines = fr.readlines()
+                    with open("add_app.txt", "w") as fw:
+                        for line in lines:
+                            if line.strip('\n') != f"{delete_choice}":
+                                fw.write(line)
 
 
 def run():
@@ -54,6 +65,7 @@ def run():
         choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
         choice_one(choice)
         choice_two(choice)
+        choice_three(choice)
 
 
 run()
