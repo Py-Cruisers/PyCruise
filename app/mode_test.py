@@ -1,6 +1,7 @@
 import webbrowser
 import os
 import fnmatch
+from app.tutorial import Tutorial
 
 
 # Inspiration for the layout of this script is from
@@ -15,8 +16,8 @@ def banner():
 
 def main_menu():
     print("\n\033[1;34m[+] 1. Tutorial")
-    print("\033[1;34m[+] 2. Create new collection")
-    print("\033[1;34m[+] 3. View existing collections")
+    print("\033[1;34m[+] 2. View existing collections")
+    print("\033[1;34m[+] 3. Create new collection")
     print("\033[1;34m[+] 4. Switch collections")
     print("\033[1;34m[+] 5. Quit\n")
 
@@ -30,21 +31,14 @@ def secondary_menu():
 
 
 def choice_one(choice):
-    """Tutorial should probably be placed within it's own Python file but this is a placeholder"""
     if choice == "1":
-
-      print("""
-      Welcome to the PyCruise Tutorial! PyCruise is a handy-dandy tool that saves the user time no matter who they are!
-      You will be able to create "lists", which you can populate with browsers or applications you want /n
-      to open upon command. You can also edit your lists to include more or less whenever you wish. Let's get Cruisin'/n
-      shall we?
-
-      [Rest of tutorial will go here but this will be a placeholder for now]
-      """)
+        Tutorial
+        main_menu()
 
 
-def choice_three(choice):
-    if choice == "3":
+
+def choice_two(choice):
+    if choice == "2":
         # file_list = None
         # print(len([name for name in os.listdir('.') if os.path.isfile(name)]))
 
