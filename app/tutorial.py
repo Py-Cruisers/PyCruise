@@ -29,8 +29,7 @@ class Tutorial:
 
         # Section 4
         print("""
-        In option two, we can view a list of our current collections available. If you are using this tool\n
-        for the first time, this will be blank. This option gives you a quick idea of what you currently have. 
+        In option two, we can view a list of our current collections available. 
         """)
         print("\n\033[1;30m[+] 1. Tutorial")
         print("\033[1;31m[+] 2. View existing collections")
@@ -40,6 +39,17 @@ class Tutorial:
 
         # Section 5
         print("""
+        If you are using this tool for the first time, this will be blank. This option gives you a quick idea\n
+        of what you currently have. 
+       """)
+        print("""
+        Collection 1
+        Collection 2
+        Collection 3
+        """)
+
+        # Section 6
+        print("""
         Of course, you can create more collections. Option 3 lets you create and personalize a new collection.\n
         """)
         print("\n\033[1;30m[+] 1. Tutorial")
@@ -47,6 +57,18 @@ class Tutorial:
         print("\033[1;31m[+] 3. Create new collection")
         print("\033[1;30m[+] 4. Switch collections")
         print("\033[1;30m[+] 5. Quit\n")
+
+        # Section 4
+        print("""
+        In option two, we can view a list of our current collections available. If you are using this tool\n
+        for the first time, this will be blank. This option gives you a quick idea of what you currently have. 
+        """)
+        print("\n\033[1;30m[+] 1. Tutorial")
+        print("\033[1;31m[+] 2. View existing collections")
+        print("\033[1;30m[+] 3. Create new collection")
+        print("\033[1;30m[+] 4. Switch collections")
+        print("\033[1;30m[+] 5. Quit\n")
+
 
         option = input("Enter (y) to continue or (x) to exit out of the tutorial.")
         while True:
