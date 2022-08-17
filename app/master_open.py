@@ -96,6 +96,7 @@ def choice_four(choice):
             text_from_file = f.readlines()
             for file in text_from_file:
                 print(file)
+                return file
 
 def run():
     choice = "4"
