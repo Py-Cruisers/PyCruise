@@ -33,8 +33,6 @@ def secondary_menu():
 def choice_one(choice):
     if choice == "1":
         Tutorial
-        main_menu()
-
 
 
 def choice_two(choice):

@@ -1,6 +1,6 @@
 class Tutorial:
     def __init__(self):
-
+        self.choice = " "
 
     def tut_main_menu(self):
         print("""
@@ -17,22 +17,59 @@ class Tutorial:
         print("\033[1;34m[+] D. Adding Applications and Browsers")
         print("\033[1;34m[+] E. Deleting Applications and Browsers")
         print("\033[1;34m[+] F. Running Applications and Browsers")
-        print("\033[1;34m[+] G. Quit\n")
+        # print("\033[1;34m[+] G. Quit\n")
 
         print("Let's get Cruisin' shall we?")
 
+        print("\033[1;34m[+] 5. Go back to Main Menu\n")
+
+    def choice_main_menu_intro(self, choice):
+        if choice.upper() == "A":
+            print("First, we have our Main Menu. Let's explore it's options.")
+            print("\n\033[1;30m[+] 1. Tutorial")
+            print("\033[1;30m[+] 2. Create new collection")
+            print("\033[1;30m[+] 3. View existing collections")
+            print("\033[1;30m[+] 4. Switch collections")
+            print("\033[1;30m[+] 5. Quit\n")
+
+            while True:
+                continue_or_ext = input("Enter (C) to continue and (X) to exit.\n > ")
+                if continue_or_ext == "X":
+                    tut_main_menu()
+                else:
+                    print("hi")
 
 
-    # def tut_intro(self):
-    #     # Section 1
+tut = Tutorial()
+print(tut.tut_main_menu())
+
+# print(tut.choice_main_menu_intro(choice))
+
+
+    # def choice_b(self, choice):
+    #     if choice.upper() == "B":
     #
-    #     # Section 2
-    #     print("First, we have our Main Menu. Let's explore it's options.")
-    #     print("\n\033[1;30m[+] 1. Tutorial")
-    #     print("\033[1;30m[+] 2. Create new collection")
-    #     print("\033[1;30m[+] 3. View existing collections")
-    #     print("\033[1;30m[+] 4. Switch collections")
-    #     print("\033[1;30m[+] 5. Quit\n")
+    #
+    # def choice_c(self, choice):
+    #     if choice.upper() == "C":
+    #
+    #
+    # def choice_d(self, choice):
+    #     if choice.upper() == "D":
+    #
+    # def choice_e(self, choice):
+    #     if choice.upper() == "E":
+    #
+    # def choice_f(self, choice):
+    #     if choice.upper() == "F":
+    #
+    # def choice_g(self, choice):
+    #     if choice.upper() == "G":
+
+
+
+
+
     #
     #     # Section 3
     #     print("Looking at option option 1, which is the current tutorial you are going through.")
