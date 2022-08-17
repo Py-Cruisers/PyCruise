@@ -58,7 +58,23 @@ def choice_three(choice):
         new_collection = input('> ')
         open(f"txt_files/{new_collection}.txt", "a")
 
+def choice_four(choice):
+    if choice == "4":
+        DIR = 'txt_files/'
+        current_collection = None
 
+        file_list = fnmatch.filter(os.listdir(DIR), '*txt')
+        file_len = (len(fnmatch.filter(os.listdir(DIR), '*txt')))
+
+        if file_len == 0:
+            print(":( Sorry, you don't have any lists yet. Would you like to make one?")
+
+        else:
+            for i in range(len(file_list)):
+                print(file_list[i].strip('.txt'))
+            switch = input("What collection would you like to choose? > ")
+            current_collection = switch
+            print(current_collection)
 
 
 def choice_six(choice):
@@ -125,7 +141,7 @@ def run():
         choice_one(choice)
         choice_two(choice)
         choice_three(choice)
-        # choice_four(choice)
+        choice_four(choice)
 
 
 
