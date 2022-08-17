@@ -1,5 +1,5 @@
 import webbrowser
-import os 
+import os
 
 # Inspiration for the layout of this script is from
 # the ghost_eye repository on GitHub
@@ -65,7 +65,6 @@ def choice_four(choice):
                 print(file)
 
 
-
 def run():
     choice = "4"
     banner()
@@ -77,5 +76,6 @@ def run():
         choice_two(choice)
         choice_three(choice)
         choice_four(choice)
+
 
 run()
