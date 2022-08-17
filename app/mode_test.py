@@ -1,7 +1,7 @@
 import webbrowser
 import os
 import fnmatch
-from app.tutorial import Tutorial
+from tutorial import Tutorial
 
 
 # Inspiration for the layout of this script is from
@@ -39,29 +39,26 @@ def choice_one(choice):
 
 def choice_two(choice):
     if choice == "2":
-        # file_list = None
-        # print(len([name for name in os.listdir('.') if os.path.isfile(name)]))
 
-        # path joining version for other paths
         DIR = 'txt_files/'
-        # print(*str(fnmatch.filter(os.listdir(DIR), '*txt')), sep= "\n")
 
         file_list = fnmatch.filter(os.listdir(DIR), '*txt')
-        # print(file_list)
+        file_len = (len(fnmatch.filter(os.listdir(DIR), '*txt')))
 
-        for i in range(len(file_list)):
-            print(file_list[i].strip('.txt'))
+        if file_len == 0:
+            print(":( Sorry, you don't have any lists yet. Would you like to make one?")
 
-        # a = ["Hello", "World"]
-        # print(' '.join(a))
-        # print(len([name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))]))
-        # go through and populate file_list with all txt files
-        # if file_list is None:
-        #     print(":( Sorry, you don't have any lists yet. Would you like to make one?")
-        #     main_menu()
-        # else:
-        #     print(file_list)
-        #     main_menu()
+        else:
+            for i in range(len(file_list)):
+                print(file_list[i].strip('.txt'))
+
+
+def choice_three(choice):
+    if choice == "3":
+        new_collection = input('> ')
+        open(f"txt_files/{new_collection}.txt", "a")
+
+
 
 
 def choice_six(choice):
@@ -128,7 +125,7 @@ def run():
         choice_one(choice)
         choice_two(choice)
         choice_three(choice)
-        choice_four(choice)
+        # choice_four(choice)
 
 
 
