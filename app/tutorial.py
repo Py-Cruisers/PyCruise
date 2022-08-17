@@ -42,11 +42,9 @@ class Tutorial:
         If you are using this tool for the first time, this will be blank. This option gives you a quick idea\n
         of what you currently have. 
        """)
-        print("""
-        Collection 1
-        Collection 2
-        Collection 3
-        """)
+        print("\n\033[1;30m[+] Collection-1")
+        print("\033[1;30m[+] Collection-2")
+        print("\033[1;30m[+] Collection-3")
 
         # Section 6
         print("""
@@ -58,13 +56,19 @@ class Tutorial:
         print("\033[1;30m[+] 4. Switch collections")
         print("\033[1;30m[+] 5. Quit\n")
 
-        # Section 4
+        # Section 7
         print("""
-        In option two, we can view a list of our current collections available. If you are using this tool\n
-        for the first time, this will be blank. This option gives you a quick idea of what you currently have. 
+        Entering into option three, you will see a prompt asking you to name your new collection. 
         """)
-        print("\n\033[1;30m[+] 1. Tutorial")
-        print("\033[1;31m[+] 2. View existing collections")
+        print("""\n\033[1;30m[+] 
+        Enter the name for your new collection: 
+        > 
+        """)
+
+        # Section 8
+        print("""
+        **NOTE** Do not includes any SPACES into your collection name
+        """)
         print("\033[1;30m[+] 3. Create new collection")
         print("\033[1;30m[+] 4. Switch collections")
         print("\033[1;30m[+] 5. Quit\n")
