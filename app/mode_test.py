@@ -1,7 +1,7 @@
 import webbrowser
 import os
 import fnmatch
-from tutorial import Tutorial
+# from tutorial import Tutorial
 
 
 # Inspiration for the layout of this script is from
@@ -32,7 +32,7 @@ def secondary_menu():
 
 def choice_one(choice):
     if choice == "1":
-        Tutorial
+       print("This feature is coming soon!")
 
 
 def choice_two(choice):
