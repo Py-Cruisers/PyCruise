@@ -4,10 +4,10 @@ import os
 
 # Inspiration for the layout of this script is from
 # the ghost_eye repository on GitHub
-# https://github.com/BullsEye0/ghost_eye/blob/master/ghost_eye.py
+# https://github.com/BullsEye0/
 
 def banner():
-    print(""" \033[01;33m                 
+    print(""" \033[01;32m                 
 8888888b.            .d8888b.                   d8b                   
 888   Y88b          d88P  Y88b                  Y8P                   
 888    888          888    888                                        
@@ -69,7 +69,7 @@ def choice_two(choice):
     if choice == "2":
 
         while True:
-            app_choice = input("Enter an app or website to add or (f) as finished: ")
+            app_choice = input("Enter an app or website to add or (f) when finished: ")
             if app_choice.lower() == "f":
                 break
             else:
@@ -79,7 +79,7 @@ def choice_two(choice):
 def choice_three(choice):
     if choice == "3":
         while True:
-            delete_choice = input("Enter an app or website to delete or (f) as finished: ")
+            delete_choice = input("Enter an app or website to delete or (f) when finished: ")
             if delete_choice == "f":
                 break
             else:
