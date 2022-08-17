@@ -77,54 +77,67 @@ def choice_four(choice):
             print(current_collection)
 
 
-def choice_six(choice):
-    """This is for Linux. For Mac/Windows users replace system path with path to application execution files"""
-    if choice == "6":
+            def choice_six(choice):
+                """This is for Linux. For Mac/Windows users replace system path with path to application execution files"""
+                if choice == "6":
 
-        with open("add_app.txt", "r") as f:
-            text_from_file = f.readlines()
+                    with open(f"txt_files/{current_collection}.txt", "r") as f:
+                        text_from_file = f.readlines()
 
-            for app in text_from_file:
-                if "http" in app or "www" in app:
-                    webbrowser.open(app)
-                else:
-                    os.system(f"/snap/bin/{app}")
-
-
-def choice_seven(choice):
-    if choice == "7":
-
-        while True:
-            app_choice = input("Enter an app or website to add or (f) as finished: ")
-            if app_choice.lower() == "f":
-                break
-            else:
-                with open("add_app.txt", "a") as f:
-                    f.write(f"{app_choice}\n")
+                        for app in text_from_file:
+                            if "http" in app or "www" in app:
+                                webbrowser.open(app)
+                            else:
+                                os.system(f"/snap/bin/{app}")
 
 
-def choice_eight(choice):
-    if choice == "8":
-        while True:
-            delete_choice = input("Enter an app or website to delete or (f) as finished: ")
-            if delete_choice.lower() == "f":
-                break
-            else:
-                with open("add_app.txt", "r") as fr:
-                    lines = fr.readlines()
-                    with open("add_app.txt", "w") as fw:
-                        for line in lines:
-                            if line.strip('\n') != f"{delete_choice}":
-                                fw.write(line)
+            def choice_seven(choice):
+                if choice == "7":
+
+                    while True:
+                        app_choice = input("Enter an app or website to add or (f) as finished: ")
+                        if app_choice.lower() == "f":
+                            break
+                        else:
+                            with open(f"txt_files/{current_collection}.txt", "a") as f:
+                                f.write(f"{app_choice}\n")
 
 
-def choice_nine(choice):
-    if choice == "9":
-        with open("add_app.txt", "r") as f:
-            text_from_file = f.readlines()
-            for file in text_from_file:
-                print(file)
+            def choice_eight(choice):
+                if choice == "8":
+                    while True:
+                        delete_choice = input("Enter an app or website to delete or (f) as finished: ")
+                        if delete_choice.lower() == "f":
+                            break
+                        else:
+                            with open(f"txt_files/{current_collection}.txt", "r") as fr:
+                                lines = fr.readlines()
+                                with open(f"txt_files/{current_collection}.txt", "w") as fw:
+                                    for line in lines:
+                                        if line.strip('\n') != f"{delete_choice}":
+                                            fw.write(line)
 
+
+            def choice_nine(choice):
+                if choice == "9":
+                    with open(f"txt_files/{current_collection}.txt", "r") as f:
+                        text_from_file = f.readlines()
+                        for file in text_from_file:
+                            print(file)
+
+            def secondary_run():
+                choice = "9"
+                banner()
+
+                while choice != "5":
+                    secondary_menu()
+                    choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
+                    choice_six(choice)
+                    choice_seven(choice)
+                    choice_eight(choice)
+                    choice_nine(choice)
+
+            secondary_run()
 
 def choice_ten(choice):
     if choice == "10":
