@@ -7,7 +7,7 @@ import os
 # https://github.com/BullsEye0/ghost_eye/blob/master/ghost_eye.py
 
 def banner():
-    print(""" \033[1;34m                 
+    print(""" \033[01;33m                 
 8888888b.            .d8888b.                   d8b                   
 888   Y88b          d88P  Y88b                  Y8P                   
 888    888          888    888                                        
@@ -19,12 +19,12 @@ def banner():
                 888                                                   
            Y8b d88P                                                   
             "Y88P"                                                       
-            \033[1;m                                                                                          
-        \033[34m PyCruse - Convenience Tool \033[0m
-        \033[34m Author: Liesl W., Dennis D., Marco F., Dominic G., Brentice L. \033[0m
+            \033[m                                                                                          
+        \033[34m PyCruise - Convenience Tool \033[0m
+        \033[34m Author:\033[m \033[01;33m Liesl W.\033[m, \033[34mDennis D.\033[m,\033[01;33m  Marco S.\033[m, \033[34mDominic G.\033[0m, \033[01;33m Brentice L. \033[0m
         \033[34m Github:  https://github.com/Py-Cruisers/PyCruise \033[0m
         \033[34m Code Fellow 401 Project \033[0m
-              Welcome to PyCruse!""")
+              \033[01;33m Welcome to PyCruse!\033[m """)
 
 def main_menu():
     print("\n\033[1;34m[+] 1. Run existing list of apps")
@@ -80,14 +80,14 @@ def choice_three(choice):
     if choice == "3":
         while True:
             delete_choice = input("Enter an app or website to delete or (f) as finished: ")
-            if delete_choice.lower() == "f":
+            if delete_choice == "f":
                 break
             else:
                 with open("add_app.txt", "r") as fr:
                     lines = fr.readlines()
                     with open("add_app.txt", "w") as fw:
                         for line in lines:
-                            if line.strip('\n') != f"{delete_choice}":
+                            if line.strip('\n').lower() != f"{delete_choice}":
                                 fw.write(line)
 
 def choice_four(choice):
@@ -103,7 +103,7 @@ def run():
 
     while choice != "5":
         main_menu()
-        choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
+        choice = input("\033[1;34m[+]\033[1;m \033[1;33mEnter your choice:\033[1;m ")
         choice_one(choice)
         choice_two(choice)
         choice_three(choice)
