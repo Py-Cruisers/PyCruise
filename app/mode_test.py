@@ -58,57 +58,86 @@ def choice_three(choice):
         new_collection = input('> ')
         open(f"txt_files/{new_collection}.txt", "a")
 
+def choice_four(choice):
+    if choice == "4":
+        DIR = 'txt_files/'
+        current_collection = None
+
+        file_list = fnmatch.filter(os.listdir(DIR), '*txt')
+        file_len = (len(fnmatch.filter(os.listdir(DIR), '*txt')))
+
+        if file_len == 0:
+            print(":( Sorry, you don't have any lists yet. Would you like to make one?")
+
+        else:
+            for i in range(len(file_list)):
+                print(file_list[i].strip('.txt'))
+            switch = input("What collection would you like to choose? > ")
+            current_collection = switch
+            print(current_collection)
 
 
+            def choice_six(choice):
+                """This is for Linux. For Mac/Windows users replace system path with path to application execution files"""
+                if choice == "6":
 
-def choice_six(choice):
-    """This is for Linux. For Mac/Windows users replace system path with path to application execution files"""
-    if choice == "6":
+                    with open(f"txt_files/{current_collection}.txt", "r") as f:
+                        text_from_file = f.readlines()
 
-        with open("add_app.txt", "r") as f:
-            text_from_file = f.readlines()
-
-            for app in text_from_file:
-                if "http" in app or "www" in app:
-                    webbrowser.open(app)
-                else:
-                    os.system(f"/snap/bin/{app}")
-
-
-def choice_seven(choice):
-    if choice == "7":
-
-        while True:
-            app_choice = input("Enter an app or website to add or (f) as finished: ")
-            if app_choice.lower() == "f":
-                break
-            else:
-                with open("add_app.txt", "a") as f:
-                    f.write(f"{app_choice}\n")
+                        for app in text_from_file:
+                            if "http" in app or "www" in app:
+                                webbrowser.open(app)
+                            else:
+                                os.system(f"/snap/bin/{app}")
 
 
-def choice_eight(choice):
-    if choice == "8":
-        while True:
-            delete_choice = input("Enter an app or website to delete or (f) as finished: ")
-            if delete_choice.lower() == "f":
-                break
-            else:
-                with open("add_app.txt", "r") as fr:
-                    lines = fr.readlines()
-                    with open("add_app.txt", "w") as fw:
-                        for line in lines:
-                            if line.strip('\n') != f"{delete_choice}":
-                                fw.write(line)
+            def choice_seven(choice):
+                if choice == "7":
+
+                    while True:
+                        app_choice = input("Enter an app or website to add or (f) as finished: ")
+                        if app_choice.lower() == "f":
+                            break
+                        else:
+                            with open(f"txt_files/{current_collection}.txt", "a") as f:
+                                f.write(f"{app_choice}\n")
 
 
-def choice_nine(choice):
-    if choice == "9":
-        with open("add_app.txt", "r") as f:
-            text_from_file = f.readlines()
-            for file in text_from_file:
-                print(file)
+            def choice_eight(choice):
+                if choice == "8":
+                    while True:
+                        delete_choice = input("Enter an app or website to delete or (f) as finished: ")
+                        if delete_choice.lower() == "f":
+                            break
+                        else:
+                            with open(f"txt_files/{current_collection}.txt", "r") as fr:
+                                lines = fr.readlines()
+                                with open(f"txt_files/{current_collection}.txt", "w") as fw:
+                                    for line in lines:
+                                        if line.strip('\n') != f"{delete_choice}":
+                                            fw.write(line)
 
+
+            def choice_nine(choice):
+                if choice == "9":
+                    with open(f"txt_files/{current_collection}.txt", "r") as f:
+                        text_from_file = f.readlines()
+                        for file in text_from_file:
+                            print(file)
+
+            def secondary_run():
+                choice = "9"
+                banner()
+
+                while choice != "5":
+                    secondary_menu()
+                    choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
+                    choice_six(choice)
+                    choice_seven(choice)
+                    choice_eight(choice)
+                    choice_nine(choice)
+
+            secondary_run()
 
 def choice_ten(choice):
     if choice == "10":
@@ -125,7 +154,7 @@ def run():
         choice_one(choice)
         choice_two(choice)
         choice_three(choice)
-        # choice_four(choice)
+        choice_four(choice)
 
 
 
