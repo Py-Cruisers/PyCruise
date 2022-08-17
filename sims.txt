@@ -1,0 +1,15 @@
+Welcome to PyCruise!
+
+Would you like to open your collection?
+(Y) FOR YES (O) Options
+> Y
+* OPENS COLLECTION *
+
+> O
+Options:
+(A) Add (D) Delete (L) List current collection
+
+> A
+W you like to add?
+> 
+
