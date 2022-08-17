@@ -1,3 +1,4 @@
+import platform
 import webbrowser
 import os
 import fnmatch
@@ -9,29 +10,43 @@ import fnmatch
 # https://github.com/BullsEye0/ghost_eye/blob/master/ghost_eye.py
 
 def banner():
-    print("""
-    WELCOME TO PYCRUISE!!
-    """)
+    print(""" \033[01;33m                 
+8888888b.            .d8888b.                   d8b                   
+888   Y88b          d88P  Y88b                  Y8P                   
+888    888          888    888                                        
+888   d88P 888  888 888        888d888 888  888 888 .d8888b   .d88b.  
+8888888P"  888  888 888        888P"   888  888 888 88K      d8P  Y8b 
+888        888  888 888    888 888     888  888 888 "Y8888b. 88888888 
+888        Y88b 888 Y88b  d88P 888     Y88b 888 888      X88 Y8b.     
+888         "Y88888  "Y8888P"  888      "Y88888 888  88888P'  "Y8888  
+                888                                                   
+           Y8b d88P                                                   
+            "Y88P"                                                       
+            \033[m                                                                                          
+        \033[34m PyCruise - Convenience Tool \033[0m
+        \033[34m Author:\033[m \033[01;33m Liesl W.\033[m, \033[34mDennis D.\033[m,\033[01;33m  Marco S.\033[m, \033[34mDominic G.\033[0m, \033[01;33m Brentice L. \033[0m
+        \033[34m Github:  https://github.com/Py-Cruisers/PyCruise \033[0m
+        \033[34m Code Fellow 401 Project \033[0m
+              \033[01;33m Welcome to PyCruse!\033[m """)
 
 
 def main_menu():
-    print("\n\033[1;34m[+] 1. Tutorial")
-    print("\033[1;34m[+] 2. View existing collections")
-    print("\033[1;34m[+] 3. Create new collection")
-    print("\033[1;34m[+] 4. Switch collections")
+    print("\n\033[1;34m[+] 1. Select Mode")
+    print("\033[1;34m[+] 2. View Your Modes")
+    print("\033[1;34m[+] 3. Create New Mode")
+    print("\033[1;34m[+] 4. How to use PyCruise")
     print("\033[1;34m[+] 5. Quit\n")
 
 def secondary_menu():
-    print("\n\033[1;34m[+] 6. Run existing list of apps")
-    print("\033[1;34m[+] 7. Add to current list of apps/websites")
-    print("\033[1;34m[+] 8. Delete from current list of apps/websites")
-    print("\033[1;34m[+] 9. View current list of apps/websites")
-    print("\033[1;34m[+] 10. Main Menu")
-    print("\033[1;34m[+] 5. Quit\n")
+    print("\n\033[1;34m[+] 6. Launch Selected Mode")
+    print("\033[1;34m[+] 7. View Apps/Websites in Selected Mode")
+    print("\033[1;34m[+] 8. Add Apps/Websites to Selected Mode")
+    print("\033[1;34m[+] 9. Delete Apps/Websites from Selected Mode")
+    print("\033[1;34m[+] R. Return to Main Menu\n")
 
 
 def choice_one(choice):
-    if choice == "1":
+    if choice == "4":
        print("This feature is coming soon!")
 
 
@@ -44,20 +59,21 @@ def choice_two(choice):
         file_len = (len(fnmatch.filter(os.listdir(DIR), '*txt')))
 
         if file_len == 0:
-            print(":( Sorry, you don't have any lists yet. Would you like to make one?")
+            print(":( Sorry, you have yet to create a mode. Enter (3) to create a new mode now!")
 
         else:
+            print("Current Existing Modes: ")
             for i in range(len(file_list)):
                 print(file_list[i].strip('.txt'))
 
 
 def choice_three(choice):
     if choice == "3":
-        new_collection = input('> ')
+        new_collection = input('Name your mode > ')
         open(f"txt_files/{new_collection}.txt", "a")
 
 def choice_four(choice):
-    if choice == "4":
+    if choice == "1":
         DIR = 'txt_files/'
         current_collection = None
 
@@ -70,9 +86,9 @@ def choice_four(choice):
         else:
             for i in range(len(file_list)):
                 print(file_list[i].strip('.txt'))
-            switch = input("What collection would you like to choose? > ")
+            switch = input("Which mode would you like to select? > ")
             current_collection = switch
-            print(current_collection)
+            # print(current_collection)
 
 
             def choice_six(choice):
@@ -81,16 +97,18 @@ def choice_four(choice):
 
                     with open(f"txt_files/{current_collection}.txt", "r") as f:
                         text_from_file = f.readlines()
+                        if len(text_from_file) == 0:
+                            print(":( Sorry, you don't have any Apps/Websites in this mode. Enter (7) to add.")
 
                         for app in text_from_file:
                             if "http" in app or "www" in app:
-                                webbrowser.open(app)
+                                webbrowser.open(app.strip())
                             else:
                                 os.system(f"/snap/bin/{app}")
 
 
             def choice_seven(choice):
-                if choice == "7":
+                if choice == "8":
 
                     while True:
                         app_choice = input("Enter an app or website to add or (f) as finished: ")
@@ -102,7 +120,7 @@ def choice_four(choice):
 
 
             def choice_eight(choice):
-                if choice == "8":
+                if choice == "9":
                     while True:
                         delete_choice = input("Enter an app or website to delete or (f) as finished: ")
                         if delete_choice.lower() == "f":
@@ -117,17 +135,21 @@ def choice_four(choice):
 
 
             def choice_nine(choice):
-                if choice == "9":
+                if choice == "7":
                     with open(f"txt_files/{current_collection}.txt", "r") as f:
                         text_from_file = f.readlines()
+                        if len(text_from_file) == 0:
+                            print(":( Sorry, you don't have any Apps/Websites in this mode. Enter (7) to add.")
                         for file in text_from_file:
                             print(file)
 
             def secondary_run():
-                choice = "9"
-                banner()
+                choice = "7"
 
-                while choice != "5":
+
+
+                while choice != "R" and choice != "r":
+                    print(f"Current Mode Activated: {current_collection}")
                     secondary_menu()
                     choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
                     choice_six(choice)
@@ -139,11 +161,11 @@ def choice_four(choice):
 
 def choice_ten(choice):
     if choice == "10":
-        main_menu()
+        return main_menu()
 
 
 def run():
-    choice = "9"
+    choice = "7"
     banner()
 
     while choice != "5":
@@ -153,7 +175,5 @@ def run():
         choice_two(choice)
         choice_three(choice)
         choice_four(choice)
-
-
 
 run()
