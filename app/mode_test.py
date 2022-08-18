@@ -32,7 +32,8 @@ def secondary_menu():
 
 def choice_one(choice):
     if choice == "1":
-        Tutorial
+        instance = Tutorial()
+        instance.tut_run()
 
 
 def choice_two(choice):
