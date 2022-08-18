@@ -401,9 +401,10 @@ class Tutorial:
         print("\033[1;34m[+] B. Modes")
         print("\033[1;34m[+] C. Secondary Menu")
         print("\033[1;34m[+] D. Adding Applications and Browsers")
-        print("\033[1;34m[+] E. Deleting Applications and Browsers")
-        print("\n\033[1;30m Let's get Cruisin' shall we?\n")
-        print("\033[1;34m[+] 5. Go back to Main Menu\n")
+        print("\033[1;34m[+] E. Deleting Applications and Browsers\n")
+        print("\033[1;30m Let's get Cruisin' shall we?\n")
+        print("\033[1;34m[\033[1;91m+\033[1;m\033[1;34m] \033[1;91m5. Go back to Main Menu\n")
+
 
     def choice_a(self, choice):
         if choice.upper() == "A":
@@ -615,9 +616,9 @@ class Tutorial:
         choice = "A"
 
         while choice != "5":
-            self.tut_banner()
-            self.tut_main_menu()
-            choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
+            # self.tut_banner()
+            # self.tut_main_menu()
+            choice = input("\033[1;34m[\033[01;33m+\033[1;34m]\033[1;m \033[01;33mEnter your choice:\033[1;m  ")
             self.choice_a(choice)
             self.choice_b(choice)
             self.choice_c(choice)
