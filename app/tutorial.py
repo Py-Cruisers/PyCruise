@@ -201,7 +201,6 @@ class Tutorial:
 
 
 
-
     def choice_a(self, choice):
         if choice.upper() == "A":
             print(self.choice_a_intro)
@@ -253,7 +252,80 @@ class Tutorial:
                 print("Please enter valid input")
                 self.choice_a(choice)
 
-
+    def choice_b(self, choice):
+        if choice.upper() == "B":
+            print(self.choice_b_intro)
+            # while statement here?
+            continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+            if continue_or_ext.upper() == "X":
+                self.tut_banner()
+                self.tut_main_menu()
+            elif continue_or_ext.upper() == "C":
+                print(self.collect_definition)
+                continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                if continue_or_ext.upper() == "X":
+                    self.tut_banner()
+                    self.tut_main_menu()
+                elif continue_or_ext.upper() == "C":
+                    print(self.collect_creation)
+                    continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                    if continue_or_ext.upper() == "X":
+                        self.tut_banner()
+                        self.tut_main_menu()
+                    elif continue_or_ext.upper() == "C":
+                        print(self.collect_creation_name)
+                        continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                        if continue_or_ext.upper() == "X":
+                            self.tut_banner()
+                            self.tut_main_menu()
+                        elif continue_or_ext.upper() == "C":
+                            print(self.collect_creation_name_note)
+                            continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                            if continue_or_ext.upper() == "X":
+                                self.tut_banner()
+                                self.tut_main_menu()
+                            elif continue_or_ext.upper() == "C":
+                                print(self.collect_creation_name_examples)
+                                continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                                if continue_or_ext.upper() == "X":
+                                    self.tut_banner()
+                                    self.tut_main_menu()
+                                elif continue_or_ext.upper() == "C":
+                                    print(self.collect_explore_view)
+                                    continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                                    if continue_or_ext.upper() == "X":
+                                        self.tut_banner()
+                                        self.tut_main_menu()
+                                    elif continue_or_ext.upper() == "C":
+                                        print(self.collect_select_view)
+                                        continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                                        if continue_or_ext.upper() == "X":
+                                            self.tut_banner()
+                                            self.tut_main_menu()
+                                        elif continue_or_ext.upper() == "C":
+                                            print(self.collect_explore_switch)
+                                            continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                                            if continue_or_ext.upper() == "X":
+                                                self.tut_banner()
+                                                self.tut_main_menu()
+                                            elif continue_or_ext.upper() == "C":
+                                                print(self.collect_select_switch)
+                                                continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                                                if continue_or_ext.upper() == "X":
+                                                    self.tut_banner()
+                                                    self.tut_main_menu()
+                                                elif continue_or_ext.upper() == "C":
+                                                    print(self.collect_switch_second_menu)
+                                                    ext_tutorial = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit:\033[1;m ")
+                                                    if continue_or_ext.upper() == "X":
+                                                        self.tut_banner()
+                                                        self.tut_main_menu()
+                                                    else:
+                                                        self.tut_banner()
+                                                        self.tut_main_menu()
+            else:
+                print("Please enter valid input")
+                self.choice_a(choice)
     # def choice_b(self, choice):
     #     if choice.upper() == "B":
     #         print(self.choice_b_intro)
@@ -293,7 +365,7 @@ class Tutorial:
             self.tut_main_menu()
             choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
             self.choice_a(choice)
-            # choice_b(choice)
+            self.choice_b(choice)
             # choice_c(choice)
             # choice_d(choice)
             # choice_e(choice)
