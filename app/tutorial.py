@@ -264,8 +264,127 @@ class Tutorial:
         free to explore the rest of the tutorial!
         """
 
+    # ##### Adding Menu Tutorial #####
 
+    choice_d_intro = """
+        Within the "Secondary Menu", there is the option to "Add Apps/Websites in Selected Mode". This option is a very
+        simple way to add more applications and/or website you want to open upon command. Let's explore what it does, shall
+        we?
+        
+        \n\033[1;30m[+] 6. Launch Selected Mode
+        \033[1;30m[+] 7. View Apps/Websites in Selected Mode
+        \033[1;31m[+] 8. Add Apps/Websites in Selected Mode
+        \033[1;30m[+] 9. Delete Apps/Websites in Selected Mode
+        \033[1;30m[+] R. Return to Main Menu\n
 
+        """
+
+    add_main = """
+        Selecting the add option will take you to a recurring prompt:\n
+            Enter an app or website to add or (f) as finished:
+        
+        **NOTE**: Both applications and website urls need to be entered as a specific format. Continue going through this
+        tutorial to see. 
+        """
+
+    add_app_notes = """
+        Here are some acceptable inputs for applications:\n
+        spotify
+        News
+        Messages
+        \n...And here are some that won't work:
+        Applications/Spotify
+        News in my applications folder 
+        M e s s a g e s  
+        """
+
+    add_url_notes = """
+        Here are some acceptable inputs for website urls:\n
+        https://www.google.com
+        https://www.amazon.com
+        https://www.youtube.com/funny-cat
+        \n...And here are some that won't work:
+        Google
+        amazon in google chrome 
+        funny cat videos on youtube
+        
+        \n**HINT**: Simply copy and paste the url from the address bar in your browser in your mode. 
+        """
+
+    add_finish = """
+        Once you have added what you need, enter f to exit out of the recurring prompt and it will take you back to the
+        secondary menu.\n
+            Enter an app or website to add or (f) as finished: https://www.google.com
+            Enter an app or website to add or (f) as finished: f
+        """
+
+    add_conclusion = """
+        That's it for adding applications and website urls, explore more of the tutorial to learn more!
+        """
+
+    # ##### Deleting Menu Tutorial #####
+
+    choice_e_intro = """
+            Within the "Secondary Menu", there is the option to "Delete Apps/Websites in Selected Mode". This option is a very
+            simple way to delete any unwanted applications and/or urls you want from your current mode. Let's explore what it does, shall
+            we?
+
+            \n\033[1;30m[+] 6. Launch Selected Mode
+            \033[1;30m[+] 7. View Apps/Websites in Selected Mode
+            \033[1;30m[+] 8. Add Apps/Websites in Selected Mode
+            \033[1;31m[+] 9. Delete Apps/Websites in Selected Mode
+            \033[1;30m[+] R. Return to Main Menu\n
+
+            """
+
+    delete_main = """
+            Selecting the delete option will take you to a recurring prompt:\n
+                Enter an app or website to delete or (f) as finished:
+
+            **NOTE**: Both applications and website urls need to be entered as a specific format. Continue going through this
+            tutorial to see. 
+            """
+
+    delete_app_notes = """
+            Here are some acceptable inputs for applications:\n
+            spotify
+            News
+            Messages
+            \n...And here are some that won't work:
+            Applications/Spotify
+            News in my applications folder 
+            M e s s a g e s  
+            """
+
+    delete_url_notes = """
+            Here are some acceptable inputs for website urls:\n
+            https://www.google.com
+            https://www.amazon.com
+            https://www.youtube.com/funny-cat
+            \n...And here are some that won't work:
+            Google
+            amazon in google chrome 
+            funny cat videos on youtube
+
+            \n**HINT**: Simply copy and paste the url from the address bar in your browser into your deleting bar. 
+            """
+
+    delete_finish = """
+            Once you have deleted what you need, enter f to exit out of the recurring prompt and it will take you back to the
+            secondary menu.\n
+                Enter an app or website to delete or (f) as finished: https://www.google.com
+                Enter an app or website to delete or (f) as finished: f
+                
+            \n\033[1;30m[+] 6. Launch Selected Mode
+            \033[1;30m[+] 7. View Apps/Websites in Selected Mode
+            \033[1;30m[+] 8. Add Apps/Websites in Selected Mode
+            \033[1;30m[+] 9. Delete Apps/Websites in Selected Mode
+            \033[1;30m[+] R. Return to Main Menu\n
+            """
+
+    delete_conclusion = """
+            That's it for deleting applications and website urls. Feel free to go back and review the tutorial any time!
+            """
 
     def tut_banner(self):
         print("""\033[1;30m
@@ -283,8 +402,7 @@ class Tutorial:
         print("\033[1;34m[+] C. Secondary Menu")
         print("\033[1;34m[+] D. Adding Applications and Browsers")
         print("\033[1;34m[+] E. Deleting Applications and Browsers")
-        print("\033[1;34m[+] F. Running Applications and Browsers\n")
-        print("\033[1;30m Let's get Cruisin' shall we?\n")
+        print("\n\033[1;30m Let's get Cruisin' shall we?\n")
         print("\033[1;34m[+] 5. Go back to Main Menu\n")
 
     def choice_a(self, choice):
@@ -387,7 +505,6 @@ class Tutorial:
                 print("Please enter valid input")
                 self.choice_b(choice)
 
-
     def choice_c(self, choice):
         if choice.upper() == "C":
             print(self.choice_c_intro)
@@ -418,59 +535,84 @@ class Tutorial:
                                 print(self.second_explore_switch)
                                 continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
                                 if continue_or_ext.upper() == "X":
-                                    self.tut_banner()
-                                    self.tut_main_menu()
-                                elif continue_or_ext.upper() == "C":
+                                    self.tut_run()
+                                elif continue_or_ext.upper() != "X":
                                     print(self.second_explore_quit)
-                                    continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                                    continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
                                     if continue_or_ext.upper() == "X":
-                                        self.tut_banner()
-                                        self.tut_main_menu()
-                                    elif continue_or_ext.upper() == "C":
+                                        self.tut_run()
+                                    elif continue_or_ext.upper() != "X":
                                         print(self.second_conclusion)
-                                        ext_tutorial = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit:\033[1;m ")
-                                        if continue_or_ext.upper() == "X":
-                                            self.tut_banner()
-                                            self.tut_main_menu()
-                                        else:
-                                            self.tut_banner()
-                                            self.tut_main_menu()
             else:
                 print("Please enter valid input")
                 self.choice_c(choice)
-    # def choice_b(self, choice):
-    #     if choice.upper() == "B":
-    #         print(self.choice_b_intro)
-    #         continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
-    #         if continue_or_ext.upper() == "X":
-    #             self.tut_main_menu()
-    #         elif continue_or_ext.upper() == "C":
-    #             def explore_tutorial():
-    #                 print(self.collect_definition)
-    #         else:
-    #             print("hi")
 
-    #
-    # def choice_c(self, choice):
-    #     if choice.upper() == "C":
-    #
-    #
-    # def choice_d(self, choice):
-    #     if choice.upper() == "D":
-    #
-    # def choice_e(self, choice):
-    #     if choice.upper() == "E":
-    #
-    # def choice_f(self, choice):
-    #     if choice.upper() == "F":
-    #
-    # def choice_g(self, choice):
-    #     if choice.upper() == "G":
+    def choice_d(self, choice):
+        if choice.upper() == "D":
+            print(self.choice_d_intro)
+            continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+            if continue_or_ext.upper() == "X":
+                self.tut_run()
+            elif continue_or_ext.upper() != "X":
+                print(self.add_main)
+                continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+                if continue_or_ext.upper() == "X":
+                    self.tut_run()
+                elif continue_or_ext.upper() != "X":
+                    print(self.add_app_notes)
+                    continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+                    if continue_or_ext.upper() == "X":
+                        self.tut_run()
+                    elif continue_or_ext.upper() != "X":
+                        print(self.add_url_notes)
+                        continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+                        if continue_or_ext.upper() == "X":
+                            self.tut_run()
+                        elif continue_or_ext.upper() != "X":
+                            print(self.add_finish)
+                            continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+                            if continue_or_ext.upper() == "X":
+                                self.tut_run()
+                            elif continue_or_ext.upper() != "X":
+                                print(self.add.conclusion)
+            else:
+                print("Please enter valid input")
+                self.choice_d(choice)
+
+    def choice_e(self, choice):
+        if choice.upper() == "E":
+            print(self.choice_e_intro)
+            continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+            if continue_or_ext.upper() == "X":
+                self.tut_run()
+            elif continue_or_ext.upper() != "X":
+                print(self.delete_main)
+                continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+                if continue_or_ext.upper() == "X":
+                    self.tut_run()
+                elif continue_or_ext.upper() != "X":
+                    print(self.delete_app_notes)
+                    continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+                    if continue_or_ext.upper() == "X":
+                        self.tut_run()
+                    elif continue_or_ext.upper() != "X":
+                        print(self.delete_url_notes)
+                        continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+                        if continue_or_ext.upper() == "X":
+                            self.tut_run()
+                        elif continue_or_ext.upper() != "X":
+                            print(self.delete_finish)
+                            continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit or any key to continue:\033[1;m ")
+                            if continue_or_ext.upper() == "X":
+                                self.tut_run()
+                            elif continue_or_ext.upper() != "X":
+                                print(self.delete_conclusion)
+            else:
+                print("Please enter valid input")
+                self.choice_e(choice)
 
     def tut_run(self):
-        choice = "4"
-        # self.tut_banner
-        # self.tut_main_menu
+        choice = "A"
 
         while choice != "5":
             self.tut_banner()
@@ -478,11 +620,7 @@ class Tutorial:
             choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
             self.choice_a(choice)
             self.choice_b(choice)
-            # choice_c(choice)
-            # choice_d(choice)
-            # choice_e(choice)
-            # choice_f(choice)
+            self.choice_c(choice)
+            self.choice_d(choice)
+            self.choice_e(choice)
 
-
-# instance = Tutorial()
-# instance.tut_run()
