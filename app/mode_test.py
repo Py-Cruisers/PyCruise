@@ -104,7 +104,23 @@ def choice_four(choice):
                             if "http" in app or "www" in app:
                                 webbrowser.open(app.strip())
                             else:
-                                os.system(f"/snap/bin/{app}")
+                                app_to_use = app.strip('\n').lower()
+
+                                if platform.system() == 'Linux':
+                                    # print("Linux detected.")
+                                    os.system(f"/snap/bin/{app_to_use}")
+
+                                if platform.system() == 'Linux' and "WSL" in platform.release():
+                                # print("WSL detected. Will require Windows fn()'s")
+                                    pass
+
+                                if platform.system() == 'Windows':
+                                    # print("Windows detected.")
+                                    pass
+
+                                if platform.system() == 'Darwin':
+                                    # print("Now opening MacOS Application!")
+                                    os.system(f"""osascript -e 'tell application "{app_to_use}" to activate'""")
 
 
             def choice_seven(choice):
@@ -130,7 +146,7 @@ def choice_four(choice):
                                 lines = fr.readlines()
                                 with open(f"txt_files/{current_collection}.txt", "w") as fw:
                                     for line in lines:
-                                        if line.strip('\n') != f"{delete_choice}":
+                                        if line.strip('\n').lower() != f"{delete_choice.lower()}":
                                             fw.write(line)
 
 
