@@ -46,8 +46,9 @@ def secondary_menu():
 
 
 def choice_one(choice):
-    if choice == "4":
-       print("This feature is coming soon!")
+     if choice == "4":
+        instance = Tutorial()
+        instance.tut_run()
 
 
 def choice_two(choice):
