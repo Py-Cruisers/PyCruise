@@ -1,28 +1,78 @@
+import os
 import pytest
 import mock
 import builtins
-import app.master_open
+import app.mode_test
 
 # @pytest.mark.skip("TODO")
-def test_choice_two():
+def test_create_mode():
     """
-    While testing choice_two:
-    - enter "2"  when prompted to "add to current list of apps/websites"
-    - enter "code" after "Enter an app or website to add or (f) as finished:"
-    - enter "f" after "Enter an app or website to add or (f) as finished:"
-    - enter "5" to quit
+    While testing option_three (create new mode) 
+    - run pytest -s
+    - enter: '3' to create
+    - enter: '1' to select mode
+    - enter: 'dev' to select dev
+    - enter: 'r' to return to main menu
+    - enter: '5' to quite
 
-    If successful "code" will be added to the add_app.txt and test
-    will pass 
+    test should pass
     """
-    app.master_open.input = lambda: '2'
-    app.master_open.input = lambda: 'code'
-    with open ("./add_app.txt", 'r') as f:
+    app.mode_test.input = lambda: '3'
+    app.mode_test.input = lambda: 'dev'
+    app.mode_test.input = lambda: '1'
+    app.mode_test.input = lambda: 'dev'
+    file_exists = os.path.exists('txt_files/dev.txt')
+    expected = True
+    assert file_exists == expected
+    
+# @pytest.mark.skip("TODO") 
+def test_add_app():
+    """
+    While testing add_app  
+    - run pytest -s
+    - enter: '1' to select mode
+    - enter: 'dev' to select dev
+    - enter: '8' to add app
+    - enter: 'slack' to add slack
+    - enter: 'r' to return to main menu
+    - enter: '5' to quite
+
+    test should pass
+    """
+    app.mode_test.input = lambda: '1'
+    app.mode_test.input = lambda: 'dev'
+    app.mode_test.input = lambda: '8'
+    app.mode_test.input = lambda: 'slack'
+    with open ("txt_files/dev.txt", 'r') as f:
         content = f.readlines()
-    expected = "code"
+    expected = "slack"
     assert content[-1].strip("\n") == expected
 
+# @pytest.mark.skip("TODO") 
+def test_delete_app():
+    """
+    While testing add_app  
+    - run pytest -s
+    - enter: '1' to select mode
+    - enter: 'dev' to select dev
+    - enter: '8' to add app
+    - enter: 'code' to add code
+    - enter: '9' to remove app
+    - enter: 'code' to remove code
+    - enter: 'r' to return to main menu
+    - enter: '5' to quite
 
-# @pytest.mark.skip("TODO")       
-# def test_choice_three():
-#     app.master_open.input = lambda: '2'
+    test should pass
+    """
+    app.mode_test.input = lambda: '1'
+    app.mode_test.input = lambda: 'dev'
+    app.mode_test.input = lambda: '9'
+    app.mode_test.input = lambda: 'code'
+    with open ("txt_files/dev.txt", 'r') as f:
+        content = f.readlines()
+    test = True
+    for file in content:
+        if file.strip("\n") == 'code':
+            test = False
+    expected = True
+    assert test == expected
