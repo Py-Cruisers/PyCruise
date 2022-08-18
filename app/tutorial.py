@@ -22,10 +22,10 @@ class Tutorial:
 
     menu_explore_tutorial = """
     We are in option 4, which is the tutorial you are going through.\n
-       \n\033[1;31m[+] Select Mode
+       \n\033[1;30m[+] Select Mode
        \033[1;30m[+] View Your Modes
        \033[1;30m[+] Create New Mode
-       \033[1;30m[+] How to use PyCruise
+       \033[1;31m[+] How to use PyCruise
        \033[1;30m[+] Quit\n
     """
 
@@ -50,10 +50,10 @@ class Tutorial:
 
     menu_explore_switch = """
     To go into your mode(s), use option 1.\n 
-        \033[1;30m[+] 1. Select Mode
+        \033[1;31m[+] 1. Select Mode
         \033[1;30m[+] 2. View Your Modes
         \033[1;30m[+] 3. Create New Mode
-        \033[1;31m[+] 4. How to use PyCruise
+        \033[1;30m[+] 4. How to use PyCruise
         \033[1;30m[+] 5. Quit\n
     """
 
@@ -67,7 +67,7 @@ class Tutorial:
     """
 
     menu_conclusion = """
-    That's it for the basic Main Menu of your PyCruise tool. If you want to learn more about the specific features, feel 
+    That's it for the basic tutorial of the Main Menu of your PyCruise tool. If you want to learn more about the specific features, feel 
     free to explore more of the tutorial!
     """
 
@@ -159,14 +159,14 @@ class Tutorial:
     \033[1;30m[+] Mode-2
     \033[1;30m[+] Mode-3\n
     
-    What collection would you like to choose? > Collection-1
+    What mode would you like to choose? > Mode-1
     """
 
     collect_switch_second_menu = """
-    Once you go into your new collection, a new secondary menu will pop up with more options! To learn more, check out more\n
+    Once you go into your new mode, a new secondary menu will pop up with more options! To learn more, check out more\n
     of the tutorial. 
     
-    You are now in Collection-1
+    You are now in Mode-1
         \n\033[1;34m[+] 6. Run existing list of apps
         \033[1;34m[+] 7. Add to current list of apps/websites
         \033[1;34m[+] 8. Delete from current list of apps/websites
@@ -178,19 +178,93 @@ class Tutorial:
     # ##### Secondary Menu Tutorial #####
 
     choice_c_intro = """
-    When you switch into one of your collections, you will see what is called the "Secondary Menu". Here is an extended\n
-    list of options you can do in terms of your collection. This tutorial will go through each of those. 
+    When you switch into one of your modes, you will see what is called the "Secondary Menu". Here is an extended\n
+    list of options you can do in terms of your mode. This tutorial will go through each of those. 
     
     
-    \n\033[1;30m[+] 6. Run existing list of apps
-    \033[1;30m[+] 7. Add to current list of apps/websites
-    \033[1;30m[+] 8. Delete from current list of apps/websites
-    \033[1;30m[+] 9. View current list of apps/websites
-    \033[1;30m[+] 10. Main Menu")
-    \033[1;30m[+] 5. Quit\n
+    \n\033[1;30m[+] 6. Launch Selected Mode
+    \033[1;30m[+] 7. View Apps/Websites in Selected Mode
+    \033[1;30m[+] 8. Add Apps/Websites in Selected Mode
+    \033[1;30m[+] 9. Delete Apps/Websites in Selected Mode
+    \033[1;30m[+] R. Return to Main Menu\n
     
     
     """
+
+    second_explore_launch = """
+    Starting at the first option, we have "Launch Selected Mode". Upon one entry of the option's number, it will open
+    up all applications and websites within that mode. For example, if the website url for Google was added to your current
+    mode, a new google window will open upon command. 
+        \nCurrent mode: Mode-1
+        \n\033[1;31m[+] Launch Selected Mode
+        \033[1;30m[+] View Apps/Websites in Selected Mode
+        \033[1;30m[+] Add Apps/Websites in Selected Mode
+        \033[1;30m[+] Delete Apps/Websites in Selected Mode
+        \033[1;30m[+] Return to Main Menu\n
+    
+    """
+
+    second_explore_tutorial = """
+        Let's look at option 2. Here you can view all of the applications and website urls you have listed in your current\n
+        mode. So if we were to select option 2...
+        \nCurrent mode: Mode-1
+        \n\033[1;30m[+] Launch Selected Mode
+        \033[1;31m[+] View Apps/Websites in Selected Mode
+        \033[1;30m[+] Add Apps/Websites in Selected Mode
+        \033[1;30m[+] Delete Apps/Websites in Selected Mode
+        \033[1;30m[+] Return to Main Menu\n
+        """
+
+    second_explore_view_collections = """
+        We'll be able to see a list of our applications and urls, as well as going back to the Secondary Menu.\n
+            https://www.google.com
+            
+            spotify
+            
+            Current mode: Mode-1
+        \n\033[1;30m[+] Launch Selected Mode
+        \033[1;30m[+] View Apps/Websites in Selected Mode
+        \033[1;30m[+] Add Apps/Websites in Selected Mode
+        \033[1;30m[+] Delete Apps/Websites in Selected Mode
+        \033[1;30m[+] Return to Main Menu\n
+        """
+
+    second_explore_create = """
+        Option 3, "Add Apps/Websites in Selected Mode" lets you add more applications and website urls to your current mode.
+        \nCurrent mode: Mode-1
+        \n\033[1;30m[+] Launch Selected Mode
+        \033[1;30m[+] View Apps/Websites in Selected Mode
+        \033[1;31m[+] Add Apps/Websites in Selected Mode
+        \033[1;30m[+] Delete Apps/Websites in Selected Mode
+        \033[1;30m[+] Return to Main Menu\n
+        """
+
+    second_explore_switch = """
+        To delete unwanted applications or website urls form your current mode, go to option four, "Delete Apps/Websites
+        in Selected Mode". 
+        \nCurrent mode: Mode-1
+        \n\033[1;30m[+] Launch Selected Mode
+        \033[1;30m[+] View Apps/Websites in Selected Mode
+        \033[1;30m[+] Add Apps/Websites in Selected Mode
+        \033[1;31m[+] Delete Apps/Websites in Selected Mode
+        \033[1;30m[+] Return to Main Menu\n
+        """
+
+    second_explore_quit = """
+        Finally, we have option 5. Selecting option 5 from the Second Menu will return you to the PyCruise Main Menu. 
+        Don't worry! You can always switch again to another mode or the same mode from the Main Menu. 
+        \nCurrent mode: Mode-1
+        \n\033[1;30m[+] Launch Selected Mode
+        \033[1;30m[+] View Apps/Websites in Selected Mode
+        \033[1;30m[+] Add Apps/Websites in Selected Mode
+        \033[1;30m[+] Delete Apps/Websites in Selected Mode
+        \033[1;31m[+] Return to Main Menu\n
+        """
+
+    second_conclusion = """
+        That's it for the basic tutorial Second Menu of your PyCruise tool. If you want to learn more about the specific features, feel 
+        free to explore the rest of the tutorial!
+        """
 
 
 
@@ -198,8 +272,8 @@ class Tutorial:
     def tut_banner(self):
         print("""\033[1;30m
           Welcome to the PyCruise Tutorial! PyCruise is a handy-dandy tool that saves the user time no matter who they are!\n
-          You will be able to create "collections", which you can populate with browsers or applications you want\n
-          to open upon command. You can also edit your collections to include more or less whenever you wish. 
+          You will be able to create "modes", which you can populate with browsers or applications you want\n
+          to open upon command. You can also edit your modes to include more or less whenever you wish. 
           
           Below is a list of the various features this tool offers you and the tutorials along with them:\n
           Enter the letter of the one you would like to cruise around. 
@@ -207,7 +281,7 @@ class Tutorial:
 
     def tut_main_menu(self):
         print("\n\033[1;34m[+] A. Main Menu")
-        print("\033[1;34m[+] B. Collections")
+        print("\033[1;34m[+] B. Modes")
         print("\033[1;34m[+] C. Secondary Menu")
         print("\033[1;34m[+] D. Adding Applications and Browsers")
         print("\033[1;34m[+] E. Deleting Applications and Browsers")
@@ -227,8 +301,7 @@ class Tutorial:
             # while statement here?
             continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
             if continue_or_ext.upper() == "X":
-                self.tut_banner()
-                self.tut_main_menu()
+                self.tut_run()
             elif continue_or_ext.upper() == "C":
                 print(self.menu_explore_tutorial)
                 continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
@@ -261,13 +334,11 @@ class Tutorial:
                                     self.tut_main_menu()
                                 elif continue_or_ext.upper() == "C":
                                     print(self.menu_conclusion)
-                                    ext_tutorial = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit:\033[1;m ")
+                                    ext_tutorial = input("\033[1;34m[+]\033[1;m \033[1;91mPress any key to continue\033[1;m ")
                                     if continue_or_ext.upper() == "X":
-                                        self.tut_banner()
-                                        self.tut_main_menu()
+                                        self.tut_run()
                                     else:
-                                        self.tut_banner()
-                                        self.tut_main_menu()
+                                        self.tut_run()
             else:
                 print("Please enter valid input")
                 self.choice_a(choice)
@@ -345,7 +416,65 @@ class Tutorial:
                                                         self.tut_main_menu()
             else:
                 print("Please enter valid input")
-                self.choice_a(choice)
+                self.choice_b(choice)
+
+
+    def choice_c(self, choice):
+        if choice.upper() == "C":
+            print(self.choice_c_intro)
+            # while statement here?
+            continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+            if continue_or_ext.upper() == "X":
+                self.tut_banner()
+                self.tut_main_menu()
+            elif continue_or_ext.upper() == "C":
+                print(self.second_explore_launch)
+                continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                if continue_or_ext.upper() == "X":
+                    self.tut_banner()
+                    self.tut_main_menu()
+                elif continue_or_ext.upper() == "C":
+                    print(self.second_explore_tutorial)
+                    continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                    if continue_or_ext.upper() == "X":
+                        self.tut_banner()
+                        self.tut_main_menu()
+                    elif continue_or_ext.upper() == "C":
+                        print(self.second_explore_view_collections)
+                        continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                        if continue_or_ext.upper() == "X":
+                            self.tut_banner()
+                            self.tut_main_menu()
+                        elif continue_or_ext.upper() == "C":
+                            print(self.second_explore_create)
+                            continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                            if continue_or_ext.upper() == "X":
+                                self.tut_banner()
+                                self.tut_main_menu()
+                            elif continue_or_ext.upper() == "C":
+                                print(self.second_explore_switch)
+                                continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                                if continue_or_ext.upper() == "X":
+                                    self.tut_banner()
+                                    self.tut_main_menu()
+                                elif continue_or_ext.upper() == "C":
+                                    print(self.second_explore_quit)
+                                    continue_or_ext = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (C) to continue or (X) to exit:\033[1;m ")
+                                    if continue_or_ext.upper() == "X":
+                                        self.tut_banner()
+                                        self.tut_main_menu()
+                                    elif continue_or_ext.upper() == "C":
+                                        print(self.second_conclusion)
+                                        ext_tutorial = input("\033[1;34m[+]\033[1;m \033[1;91mEnter (X) to exit:\033[1;m ")
+                                        if continue_or_ext.upper() == "X":
+                                            self.tut_banner()
+                                            self.tut_main_menu()
+                                        else:
+                                            self.tut_banner()
+                                            self.tut_main_menu()
+            else:
+                print("Please enter valid input")
+                self.choice_c(choice)
     # def choice_b(self, choice):
     #     if choice.upper() == "B":
     #         print(self.choice_b_intro)
@@ -377,8 +506,8 @@ class Tutorial:
 
     def tut_run(self):
         choice = "4"
-        self.tut_banner()
-        self.tut_main_menu()
+        # self.tut_banner
+        # self.tut_main_menu
 
         while choice != "5":
             self.tut_banner()
