@@ -1,7 +1,7 @@
 # want to end up putting this in a class that we can import into master file and run tutorial from there. However, this
 # was too complicated at first so going to try getting it working as a separate file itself then go from there.
 
-##################################### STRINGS #####################################
+# #################################### STRINGS #####################################
 
 class Tutorial:
 
@@ -174,6 +174,24 @@ class Tutorial:
     """
 
     # ##### Secondary Menu Tutorial #####
+
+    choice_c_intro = """
+    When you switch into one of your collections, you will see what is called the "Secondary Menu". Here is an extended\n
+    list of options you can do in terms of your collection. This tutorial will go through each of those. 
+    
+    
+    \n\033[1;30m[+] 6. Run existing list of apps
+    \033[1;30m[+] 7. Add to current list of apps/websites
+    \033[1;30m[+] 8. Delete from current list of apps/websites
+    \033[1;30m[+] 9. View current list of apps/websites
+    \033[1;30m[+] 10. Main Menu")
+    \033[1;30m[+] 5. Quit\n
+    
+    
+    """
+
+    
+
 
     def tut_banner(self):
         print("""\033[1;30m
