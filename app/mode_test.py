@@ -2,7 +2,7 @@ import platform
 import webbrowser
 import os
 import fnmatch
-# from tutorial import Tutorial
+from tutorial import Tutorial
 
 
 # Inspiration for the layout of this script is from
