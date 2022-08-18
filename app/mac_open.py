@@ -1,5 +1,5 @@
 import webbrowser
-import os
+import os 
 
 # Inspiration for the layout of this script is from
 # the ghost_eye repository on GitHub
@@ -30,8 +30,8 @@ def choice_one(choice):
                     webbrowser.open(app)
                 else:
                     app_to_use = app.strip('\n').lower()
-                    os.system(f"/snap/bin/{app_to_use}")
-
+                    os.system(f"""osascript -e 'tell application "{app_to_use}" to activate'""")
+         
 def choice_two(choice):
     if choice == "2":
 
@@ -65,6 +65,7 @@ def choice_four(choice):
                 print(file)
 
 
+
 def run():
     choice = "4"
     banner()
@@ -76,6 +77,5 @@ def run():
         choice_two(choice)
         choice_three(choice)
         choice_four(choice)
-
 
 run()
