@@ -3,6 +3,7 @@ import webbrowser
 import os
 import fnmatch
 from tutorial import Tutorial
+from pathlib import Path
 
 
 # Inspiration for the layout of this script is from
@@ -35,7 +36,7 @@ def main_menu():
     print("\033[1;34m[+] 2. View Your Modes")
     print("\033[1;34m[+] 3. Create New Mode")
     print("\033[1;34m[+] 4. How to use PyCruise")
-    print("\033[1;34m[+] 5. Quit\n")
+    print("\033[1;34m[\033[1;91m+\033[m\033[1;34m] \033[1;91m5. Quit\033[m\n")
 
 def secondary_menu():
     print("\n\033[1;34m[+] 6. Launch Selected Mode")
@@ -65,7 +66,7 @@ def choice_two(choice):
         else:
             print("Current Existing Modes: ")
             for i in range(len(file_list)):
-                print(file_list[i].strip('.txt'))
+                print(Path(file_list[i]).stem)
 
 
 def choice_three(choice):
@@ -86,7 +87,7 @@ def choice_four(choice):
 
         else:
             for i in range(len(file_list)):
-                print(file_list[i].strip('.txt'))
+                print(Path(file_list[i]).stem)
             switch = input("Which mode would you like to select? > ")
             current_collection = switch
             # print(current_collection)
@@ -99,7 +100,7 @@ def choice_four(choice):
                     with open(f"txt_files/{current_collection}.txt", "r") as f:
                         text_from_file = f.readlines()
                         if len(text_from_file) == 0:
-                            print(":( Sorry, you don't have any Apps/Websites in this mode. Enter (7) to add.")
+                            print(":( Sorry, you don't have any Apps/Websites in this mode. Enter (8) to add.")
 
                         for app in text_from_file:
                             if "http" in app or "www" in app:
@@ -156,7 +157,7 @@ def choice_four(choice):
                     with open(f"txt_files/{current_collection}.txt", "r") as f:
                         text_from_file = f.readlines()
                         if len(text_from_file) == 0:
-                            print(":( Sorry, you don't have any Apps/Websites in this mode. Enter (7) to add.")
+                            print(":( Sorry, you don't have any Apps/Websites in this mode. Enter (8) to add.")
                         for file in text_from_file:
                             print(file)
 
@@ -168,7 +169,7 @@ def choice_four(choice):
                 while choice != "R" and choice != "r":
                     print(f"Current Mode Activated: {current_collection}")
                     secondary_menu()
-                    choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
+                    choice = input("\033[1;34m[+]\033[1;m \033[01;33mEnter your choice:\033[1;m ")
                     choice_six(choice)
                     choice_seven(choice)
                     choice_eight(choice)
@@ -187,7 +188,7 @@ def run():
 
     while choice != "5":
         main_menu()
-        choice = input("\033[1;34m[+]\033[1;m \033[1;91mEnter your choice:\033[1;m ")
+        choice = input("\033[1;34m[\033[01;33m+\033[1;34m]\033[1;m \033[01;33mEnter your choice:\033[1;m ")
         choice_one(choice)
         choice_two(choice)
         choice_three(choice)
