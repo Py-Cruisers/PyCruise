@@ -190,7 +190,7 @@ class Tutorial:
     
     """
 
-    
+
 
 
     def tut_banner(self):
