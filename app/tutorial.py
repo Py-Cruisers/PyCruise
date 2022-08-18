@@ -13,56 +13,56 @@ class Tutorial:
     choice_a_intro = """
     \nFirst, we have our Main Menu. Each of it's options is assigned a number which makes for easy selection.\n
      Let's explore it's options.\n
-        \033[1;30m[+] 1. Tutorial
-        \033[1;30m[+] 2. Create new collection
-        \033[1;30m[+] 3. View existing collections
-        \033[1;30m[+] 4. Switch collections
+        \033[1;30m[+] 1. Select Mode
+        \033[1;30m[+] 2. View Your Modes
+        \033[1;30m[+] 3. Create New Mode
+        \033[1;30m[+] 4. How to use PyCruise
         \033[1;30m[+] 5. Quit\n
     """
 
     menu_explore_tutorial = """
-    We are in option 1, which is the tutorial you are going through.\n
-       \n\033[1;31m[+] 1. Tutorial
-       \033[1;30m[+] 2. View existing collections
-       \033[1;30m[+] 3. Create new collection
-       \033[1;30m[+] 4. Switch collections
-       \033[1;30m[+] 5. Quit\n
+    We are in option 4, which is the tutorial you are going through.\n
+       \n\033[1;31m[+] Select Mode
+       \033[1;30m[+] View Your Modes
+       \033[1;30m[+] Create New Mode
+       \033[1;30m[+] How to use PyCruise
+       \033[1;30m[+] Quit\n
     """
 
     menu_explore_view_collections = """
-    In option two, we can view a list of our current collections available. Note that this won't do much if you are using\n
+    In option two, we can view a list of our current modes available. Note that this won't do much if you are using\n
     this tool for the first time.\n
-        \033[1;30m[+] 1. Tutorial
-        \033[1;31m[+] 2. View existing collections
-        \033[1;30m[+] 3. Create new collection
-        \033[1;30m[+] 4. Switch collections
-        \033[1;30m[+] 5. Quit\n
+        \033[1;30m[+] Select Mode
+        \033[1;31m[+] View Your Modes
+        \033[1;30m[+] Create New Mode
+        \033[1;30m[+] How to use PyCruise
+        \033[1;30m[+] Quit\n
     """
 
     menu_explore_create = """
-    Option 3 allows you to create a new collection, which will be what you will enter your browsers and/or applications into.\n 
-        \033[1;30m[+] 1. Tutorial
-        \033[1;30m[+] 2. View existing collections
-        \033[1;31m[+] 3. Create new collection
-        \033[1;30m[+] 4. Switch collections
+    Option 3 allows you to create a new mode, which will be what you will enter your browsers and/or applications into.\n 
+        \033[1;30m[+] 1. Select Mode
+        \033[1;30m[+] 2. View Your Modes
+        \033[1;31m[+] 3. Create New Mode
+        \033[1;30m[+] 4. How to use PyCruise
         \033[1;30m[+] 5. Quit\n
     """
 
     menu_explore_switch = """
-    To go into your collection(s), use option 4.\n 
-        \033[1;30m[+] 1. Tutorial
-        \033[1;30m[+] 2. View existing collections
-        \033[1;30m[+] 3. Create new collection
-        \033[1;31m[+] 4. Switch collections
+    To go into your mode(s), use option 1.\n 
+        \033[1;30m[+] 1. Select Mode
+        \033[1;30m[+] 2. View Your Modes
+        \033[1;30m[+] 3. Create New Mode
+        \033[1;31m[+] 4. How to use PyCruise
         \033[1;30m[+] 5. Quit\n
     """
 
     menu_explore_quit = """
     Finally, we have option 5. Selecting option 5 from the Main Menu will exit you out of PyCruise entirely.\n
-        \033[1;30m[+] 1. Tutorial
-        \033[1;30m[+] 2. View existing collections
-        \033[1;30m[+] 3. Create new collection
-        \033[1;30m[+] 4. Switch collections
+        \033[1;30m[+] 1. Select Mode
+        \033[1;30m[+] 2. View Your Modes
+        \033[1;30m[+] 3. Create New Mode
+        \033[1;30m[+] 4. How to use PyCruise
         \033[1;31m[+] 5. Quit\n
     """
 
@@ -71,47 +71,49 @@ class Tutorial:
     free to explore more of the tutorial!
     """
 
-    # ##### Collections Tutorial #####
+    # ##### Modes Tutorial #####
+
+    # NOTE: Previously what is now known as "modes" was previously called "collections". Variables still reflect that naming
 
     choice_b_intro = """
-    Let's dive a little deeper into what collections are, shall we?\n
-    Here in the Main Menu, we have three options pertaining to collections. 
-        \033[1;30m[+] 2. View existing collections
-        \033[1;30m[+] 3. Create new collection
-        \033[1;30m[+] 4. Switch collections
+    Let's dive a little deeper into what modes are, shall we?\n
+    Here in the Main Menu, we have three options pertaining to modes. 
+        \033[1;30m[+] 1. Select mode
+        \033[1;30m[+] 2. View Your Modes
+        \033[1;30m[+] 3. Create New Mode
     """
 
     collect_definition = """
-    Now you might be asking yourself, "what is a collection?"\n
-    Well, a collection is a personalized list of urls and application names that the user can utilize to open this list with\n
+    Now you might be asking yourself, "what is a mode?"\n
+    Well, a mode is a personalized list of urls and application names that the user can utilize to open this list with\n
     a single command. Essentially, you can put in as many browser urls or application names as you want and one command will\n
     open all of them at once! Real time saver, huh?
     """
 
     collect_creation = """
-    You can create as many collections as you want! And if we take a look back at those options, we can see this can be done\n
-    via option 3, "Create new collection". Let's see what happens when we enter the number 3. 
-        \033[1;30m[+] 2. View existing collections
-        \033[1;31m[+] 3. Create new collection
-        \033[1;30m[+] 4. Switch collections
+    You can create as many modes as you want! And if we take a look back at those options, we can see this can be done\n
+    via option 3, "Create New Mode". Let's see what happens if enter into "Create New Mode".
+        \033[1;30m[+] Select mode
+        \033[1;30m[+] View Your Modes
+        \033[1;31m[+] Create New Mode
     """
 
     collect_creation_name = """
-    This will bring you to a new prompt, which will ask you to name your new collection.\n
-    What do you want to name your new collection?
+    This will bring you to a new prompt, which will ask you to name your new mode.\n
+    Name your mode
     >  
     """
 
     collect_creation_name_note = """
-    Enter whatever title you want to name your new collection.\n
-    What do you want to name your new collection?
+    Enter whatever title you want to name your new mode.\n
+    Name your mode
     > school-work
     
     \n**NOTE** Do not include SPACES within your title.
     """
 
     collect_creation_name_examples = """
-    Here are some acceptable titles for your collections:\n
+    Here are some acceptable titles for your modes:\n
     school-work
     HOMEWORK
     I-like-SURFING
@@ -122,40 +124,40 @@ class Tutorial:
     """
 
     collect_explore_view = """
-    Now that we've created a new collection, let's see what we can do with it.\n
+    Now that we've created a new mode, let's see what we can do with it.\n
     Back in the Main Menu, there's two more choices. 
-        \033[1;30m[+] 2. View existing collections
-        \033[1;30m[+] 3. Create new collection
-        \033[1;30m[+] 4. Switch collections
+        \033[1;30m[+] Select Mode
+        \033[1;30m[+] View Your Modes
+        \033[1;30m[+] Create New Mode
     """
 
     collect_select_view = """
-    If we select option 2, "View existing collections", it will display a list of your existing collections and also take you\n
-    back to the Main Menu. Note that if you are using PyCruise for the first time or you haven't created any collections yet,\n
+    If we select option 2, "View Your Modes", it will display a list of your existing modes and also take you\n
+    back to the Main Menu. Note that if you are using PyCruise for the first time or you haven't created any modes yet,\n
     it won't display anything.\n 
-    \033[1;30m[+] Collection-1")
-    \033[1;30m[+] Collection-2")
-    \033[1;30m[+] Collection-3\n")
+    \033[1;30m[+] Mode-1
+    \033[1;30m[+] Mode-2
+    \033[1;30m[+] Mode-3\n
         
-        \033[1;30m[+] 1. Tutorial
-        \033[1;30m[+] 2. Create new collection
-        \033[1;30m[+] 3. View existing collections
-        \033[1;30m[+] 4. Switch collections
+        \033[1;30m[+] 1. Select Mode
+        \033[1;30m[+] 2. View Your Modes
+        \033[1;30m[+] 3. Create New Mode
+        \033[1;30m[+] 4. How to use PyCruise
         \033[1;30m[+] 5. Quit\n
     """
 
     collect_explore_switch = """
-    Finally, we have one last option in our Main Menu when talking about collections. And that is our "Switch Collections".\n  
-        \033[1;30m[+] 2. View existing collections
-        \033[1;30m[+] 3. Create new collection
-        \033[1;31m[+] 4. Switch collections
+    Finally, we have one last option in our Main Menu when talking about modes. And that is our "Select Mode".\n  
+        \033[1;31m[+] Select Mode
+        \033[1;30m[+] View Your Modes
+        \033[1;30m[+] Create New Mode
     """
 
     collect_select_switch = """
-    Selecting option 4 will let you go into one of your collections and work on it from within.\n 
-    \033[1;30m[+] Collection-1")
-    \033[1;30m[+] Collection-2")
-    \033[1;30m[+] Collection-3\n")
+    Selecting option 1 will let you go into one of your modes and work on it from within.\n 
+    \033[1;30m[+] Mode-1
+    \033[1;30m[+] Mode-2
+    \033[1;30m[+] Mode-3\n
     
     What collection would you like to choose? > Collection-1
     """
