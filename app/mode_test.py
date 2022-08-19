@@ -194,4 +194,6 @@ def run():
         choice_three(choice)
         choice_four(choice)
 
-run()
+
+if __name__ == "__main__":
+    run()
