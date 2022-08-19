@@ -575,7 +575,7 @@ class Tutorial:
                             if continue_or_ext.upper() == "X":
                                 self.tut_run()
                             elif continue_or_ext.upper() != "X":
-                                print(self.add.conclusion)
+                                print(self.add_conclusion)
             else:
                 print("Please enter valid input")
                 self.choice_d(choice)
@@ -616,8 +616,8 @@ class Tutorial:
         choice = "A"
 
         while choice != "5":
-            # self.tut_banner()
-            # self.tut_main_menu()
+            self.tut_banner()
+            self.tut_main_menu()
             choice = input("\033[1;34m[\033[01;33m+\033[1;34m]\033[1;m \033[01;33mEnter your choice:\033[1;m  ")
             self.choice_a(choice)
             self.choice_b(choice)
