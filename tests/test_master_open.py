@@ -1,6 +1,6 @@
 import os
 import pytest
-import mock
+# import mock
 import builtins
 import app.mode_test
 
